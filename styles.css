@@ -1,0 +1,7 @@
+#canvas {
+    width: 30em;
+    height: 30em;
+    border: .3em solid black;
+    border-radius: 10px;
+    display: flex;
+}
