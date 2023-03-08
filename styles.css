@@ -29,3 +29,7 @@
     border: .1em solid red;
     display: flex;
 }
+
+.hovered {
+    background-color: aqua;
+}

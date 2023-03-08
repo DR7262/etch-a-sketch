@@ -12,7 +12,7 @@
     <div id="canvas">
         
     </div>
-    <button onclick= generatePixels() id="generator">Generate</button>
+    <button onclick= generatePixels(16) id="generator">Generate</button>
     <script>
         let canvas = document.getElementById('canvas');
 
@@ -22,6 +22,15 @@
         pixel.classList.add('pixel');
 
         let pixelCount = 16;
+
+        let pxl = document.querySelector('.pixel')
+
+        canvas.addEventListener('mouseover', function(event) {
+            let selected = event.target;
+            if (selected.classList == 'pixel') {
+                selected.classList.add('hovered');
+            }
+        });
 
         function generatePixels(pixelCount) {
             canvas.innerHTML = ""
