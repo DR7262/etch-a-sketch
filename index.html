@@ -12,9 +12,25 @@
     <div id="canvas">
         
     </div>
-    <button id="generator">Generate</button>
+    <button onclick= generatePixels() id="generator">Generate</button>
     <script>
-        
+        let canvas = document.getElementById('canvas');
+
+        const btn = document.querySelector('#generator');
+
+        let pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+
+        let pixelCount = 16;
+
+        function generatePixels(pixelCount) {
+            canvas.innerHTML = ""
+            for (let i = 0; i < 100; i++) {
+                let pixel = document.createElement('div');
+                pixel.classList.add('pixel');
+                canvas.appendChild(pixel);
+            }
+        }
     </script>
 </body>
 </html>

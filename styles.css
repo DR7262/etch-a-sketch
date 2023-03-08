@@ -11,6 +11,7 @@
     left: 50%;
     margin-top: -15em;
     margin-left: -15em;
+    align-content: flex-start;
 }
 
 #generator {
@@ -23,8 +24,8 @@
 }
 
 .pixel {
-    width: 1em;
-    height: 1em;
+    width: 2.8em;
+    height: 2.8em;
     border: .1em solid red;
     display: flex;
 }
