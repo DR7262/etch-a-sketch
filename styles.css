@@ -7,10 +7,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     position:fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
-    margin-top: -15em;
-    margin-left: -15em;
+    transform: translate(-50%, -50%);
     align-content: flex-start;
     overflow: hidden;
 }
@@ -18,13 +17,17 @@
 #generator {
     padding: .5em;
     position: fixed;
-    top: 90%;
+    top: 88%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
 }
 
-.slider {
+.pixelSlider {
+    padding: .5em;
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
 }
 
