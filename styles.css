@@ -24,10 +24,14 @@
     transform: translate(-50%, -50%);
 }
 
+.slider {
+    
+}
+
 .pixel {
     box-sizing: content-box;
-    width: 10%;
-    height: 10%;
+    width: 6em;
+    height: 6em;
     display: flex;
 }
 
