@@ -9,12 +9,13 @@
     
 </head>
 <body>
+    <h1> Etch-a-sketch</h1>
     <div id="canvas">
         
     </div>
     <button onclick= generatePixels() id="generator">Generate</button>
     <div class="pixelSlider">
-        <input type="range" min="1" max="64" value="16" class="slider" id="pixelCount">
+        <input type="range" min="1" max="100" value="16" class="slider" id="pixelCount">
     </div>
     <p id="value">Pixel Count: 16 x 16 | 256 pixels</p>
     <script>
@@ -51,7 +52,6 @@
                 pixel.style.height = pxlHeight;
                 pixel.style.width = pxlWidth;
                 canvas.appendChild(pixel);
-                console.log(i);
             }
         }
 
