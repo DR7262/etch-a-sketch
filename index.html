@@ -18,12 +18,18 @@
     </div>
     <script>
         let canvas = document.getElementById('canvas');
+        let canvasStyle = getComputedStyle(canvas)
 
         var pxlslider = document.getElementById('pixelCount')
-        let pxlCount = pxlslider.value;
+        let pxlsInARow = pxlslider.value;
+
+        let pxlHeight = (parseInt(canvasStyle.height) / pxlsInARow).toFixed(3) + 'px'
+        let pxlWidth = (parseInt(canvasStyle.width) / pxlsInARow).toFixed(3) + 'px'
 
         pxlslider.oninput = function() {
-            pxlCount = pxlslider.value;
+            pxlsInARow = pxlslider.value;
+            pxlHeight = (parseInt(canvasStyle.height) / pxlsInARow).toFixed(3) + 'px'
+            pxlWidth = (parseInt(canvasStyle.width) / pxlsInARow).toFixed(3) + 'px'
         }
 
         let pxl = document.querySelector('.pixel')
@@ -37,10 +43,13 @@
 
         function generatePixels() {
             canvas.innerHTML = ""
-            for (let i = 0; i < pxlCount; i++) {
+            for (let i = 0; i < (pxlsInARow * pxlsInARow); i++) {
                 let pixel = document.createElement('div');
                 pixel.classList.add('pixel');
+                pixel.style.height = pxlHeight;
+                pixel.style.width = pxlWidth;
                 canvas.appendChild(pixel);
+                console.log(i);
             }
         }
     </script>
