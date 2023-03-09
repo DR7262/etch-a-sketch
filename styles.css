@@ -16,7 +16,7 @@ html {
     background-color: antiquewhite;
     width: 25em;
     height: 25em;
-    border: .3em solid black;
+    outline: .3em solid black;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -62,14 +62,9 @@ html {
     top: 92%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
 
 .pixel {
     box-sizing: content-box;
     display: flex;
-}
-
-.hovered {
-    background-color: aqua;
 }
