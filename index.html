@@ -13,6 +13,11 @@
     <div id="canvas">
         
     </div>
+    <div class="colorSection">
+        <input type="color" id="colorPicker" value="black">
+        <label>Color</label>
+    </div>
+    
     <button onclick= generatePixels() id="generator">Generate</button>
     <div class="pixelSlider">
         <input type="range" min="1" max="100" value="16" class="slider" id="pixelCount">
@@ -28,6 +33,13 @@
         let pxlHeight = (parseInt(canvasStyle.height) / pxlsInARow).toFixed(3) + 'px'
         let pxlWidth = (parseInt(canvasStyle.width) / pxlsInARow).toFixed(3) + 'px'
 
+        var colorPicker = document.getElementById('colorPicker')
+        let currentColor = colorPicker.value;
+
+        colorPicker.oninput = function() {
+            currentColor = colorPicker.value;
+        }
+
         pxlslider.oninput = function() {
             pxlsInARow = pxlslider.value;
             pxlHeight = (parseInt(canvasStyle.height) / pxlsInARow).toFixed(3) + 'px'
@@ -40,7 +52,7 @@
         canvas.addEventListener('mouseover', function(event) {
             let selected = event.target;
             if (selected.classList == 'pixel') {
-                selected.style.backgroundColor = 'black';
+                selected.style.backgroundColor = currentColor;
             }
         });
 
