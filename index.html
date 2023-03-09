@@ -16,6 +16,7 @@
     <div class="pixelSlider">
         <input type="range" min="1" max="64" value="16" class="slider" id="pixelCount">
     </div>
+    <p id="value">Pixel Count: 16 x 16 | 256 pixels</p>
     <script>
         let canvas = document.getElementById('canvas');
         let canvasStyle = getComputedStyle(canvas)
@@ -30,6 +31,7 @@
             pxlsInARow = pxlslider.value;
             pxlHeight = (parseInt(canvasStyle.height) / pxlsInARow).toFixed(3) + 'px'
             pxlWidth = (parseInt(canvasStyle.width) / pxlsInARow).toFixed(3) + 'px'
+            document.getElementById('value').innerHTML = "Pixel Count: " + pxlslider.value + " x " + pxlslider.value + " | " + (pxlsInARow * pxlsInARow) + " pixels";
         }
 
         let pxl = document.querySelector('.pixel')
