@@ -19,6 +19,8 @@
     </div>
     
     <button onclick= generatePixels() id="generator">Generate</button>
+    <button id = "eraser">Eraser</button>
+    <button id = "rainbow">Rainbow</button>
     <div class="pixelSlider">
         <input type="range" min="1" max="100" value="16" class="slider" id="pixelCount">
     </div>
@@ -40,6 +42,7 @@
 
         colorPicker.oninput = function() {
             currentColor = colorPicker.value;
+            brush = setColor;
         }
 
         pxlslider.oninput = function() {
@@ -54,6 +57,14 @@
         canvas.addEventListener('mouseover', function(event) {
             let selected = event.target;
             brush(selected)
+        });
+
+        document.getElementById('eraser').addEventListener('mousedown', () => {
+            brush = eraseColor;
+        });
+
+        document.getElementById('rainbow').addEventListener('mousedown', () => {
+            brush = setRandomColor;
         });
 
         function generatePixels() {
