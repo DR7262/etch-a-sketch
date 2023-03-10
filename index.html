@@ -14,7 +14,7 @@
         
     </div>
     <div class="colorSection">
-        <input type="color" id="colorPicker" value="black">
+        <input type="color" id="colorPicker" value="#101010">
         <label>Color</label>
     </div>
     
@@ -36,6 +36,8 @@
         var colorPicker = document.getElementById('colorPicker')
         let currentColor = colorPicker.value;
 
+        let brushMode = setColor;
+
         colorPicker.oninput = function() {
             currentColor = colorPicker.value;
         }
@@ -51,9 +53,7 @@
 
         canvas.addEventListener('mouseover', function(event) {
             let selected = event.target;
-            if (selected.classList == 'pixel') {
-                selected.style.backgroundColor = currentColor;
-            }
+            brushMode(selected)
         });
 
         function generatePixels() {
@@ -64,6 +64,12 @@
                 pixel.style.height = pxlHeight;
                 pixel.style.width = pxlWidth;
                 canvas.appendChild(pixel);
+            }
+        }
+
+        function setColor(element) {
+            if (element.classList == 'pixel') {
+                element.style.backgroundColor = currentColor;
             }
         }
 
