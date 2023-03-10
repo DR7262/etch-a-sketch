@@ -38,7 +38,7 @@ button {
     padding: .5em;
 }
 
-button: hover {
+button:hover {
     scale: 110%;
 }
 
@@ -46,6 +46,20 @@ button: hover {
     position: fixed;
     top: 80%;
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#rainbow {
+    position: fixed;
+    top: 80%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+}
+
+#eraser {
+    position: fixed;
+    top: 80%;
+    left: 74%;
     transform: translate(-50%, -50%);
 }
 
