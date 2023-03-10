@@ -14,7 +14,7 @@
         
     </div>
     <div class="colorSection">
-        <input type="color" id="colorPicker" value="#101010">
+        <input type="color" id="colorPicker" value="#000000">
         <label>Color</label>
     </div>
     
@@ -36,7 +36,7 @@
         var colorPicker = document.getElementById('colorPicker')
         let currentColor = colorPicker.value;
 
-        let brushMode = setColor;
+        let brush = setColor;
 
         colorPicker.oninput = function() {
             currentColor = colorPicker.value;
@@ -53,7 +53,7 @@
 
         canvas.addEventListener('mouseover', function(event) {
             let selected = event.target;
-            brushMode(selected)
+            brush(selected)
         });
 
         function generatePixels() {
@@ -71,6 +71,25 @@
             if (element.classList == 'pixel') {
                 element.style.backgroundColor = currentColor;
             }
+        }
+
+        function eraseColor(element) {
+            if (element.classList == 'pixel') {
+                element.style.backgroundColor = '';
+            }
+        }
+
+        function setRandomColor(element) {
+            if (element.classList == 'pixel') {
+                element.style.backgroundColor = getRandomHex();
+            }
+        }
+
+        function getRandomHex() {
+            let result = Math.floor(Math.random() * 16777215);
+            /*Line below converts decimal into hexadecimal, pads 0s then adds # to start to follow RGB hex code format */
+            result = result.toString(16).padStart(6, '0').padStart(7, '#');
+            return result;
         }
 
         generatePixels()
