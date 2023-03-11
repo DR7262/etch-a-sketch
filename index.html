@@ -97,12 +97,20 @@
         }
 
         function getRandomHex() {
-            let result = Math.floor(Math.random() * 16777215);
-            /*Line below converts decimal into hexadecimal, pads 0s then adds # to start to follow RGB hex code format */
-            result = result.toString(16).padStart(6, '0').padStart(7, '#');
+            let result = Math.floor(Math.random() * 16777215 /*Max possible RGB combinations*/);
+            result = toHexCode(result);
             return result;
         }
 
+        function toHexCode(number) {
+            x = number.toString(16).padStart(6, '0').padStart(7, '#');
+            return x;
+        }
+
+        function rgbToDec(rgbCode) {
+            x = parseInt(rgbCode.slide(1), 16);
+            return x;
+        }
         generatePixels()
     </script>
 </body>
