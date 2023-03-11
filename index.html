@@ -108,9 +108,31 @@
         }
 
         function rgbToDec(rgbCode) {
-            x = parseInt(rgbCode.slide(1), 16);
+            x = parseInt(rgbCode.slice(1), 16);
             return x;
         }
+
+        function separateRGB(rgbCode) {
+            let R = rgbCode.slice(1, 3);
+            let G = rgbCode.slice(3, 5);
+            let B = rgbCode.slice(5, 7);
+
+            let rgb = [R, G, B];
+            return rgb;
+        }
+
+        function shadePixel(element) {
+            if (element.classList == 'pixel') {
+                let color = '';
+                if (element.style.backgroundColor == '') {
+                    16777215
+                }
+                if (parseInt(color.slice(1, 16)) == 0) {
+                    
+                }
+            }
+        }
+        
         generatePixels()
     </script>
 </body>
