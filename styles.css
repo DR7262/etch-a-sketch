@@ -63,6 +63,10 @@ button:hover,
     margin: .5em auto;
 }
 
+#brushSettings {
+    display: flex;
+}
+
 #value {
     padding: .5em;
 }
